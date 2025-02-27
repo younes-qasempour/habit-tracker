@@ -12,7 +12,7 @@ pixela_endpoint = "https://pixe.la/v1/users"
 graph_endpoint = f"{pixela_endpoint}/{USER_NAME}/graphs"
 pixel_creation_endpoint = f'{pixela_endpoint}/{USER_NAME}/graphs/{GRAPH_ID}'
 pixel_update_endpoint = f'{pixela_endpoint}/{USER_NAME}/graphs/{GRAPH_ID}/{yesterday.strftime('%Y%m%d')}'
-
+pixel_delete_endpoint = f'{pixela_endpoint}/{USER_NAME}/graphs/{GRAPH_ID}/{yesterday.strftime('%Y%m%d')}'
 
 headers = {
     'X-USER-TOKEN': MY_TOKEN,
@@ -49,5 +49,5 @@ pixel_data_update = {
 # response = requests.put(url=pixel_update_endpoint, json=pixel_data_update, headers=headers)
 # print(response.text)
 
-response = requests.delete(url=pixel_update_endpoint, headers=headers)
+response = requests.delete(url=pixel_delete_endpoint, headers=headers)
 print(response.text)
